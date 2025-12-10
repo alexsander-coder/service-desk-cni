@@ -103,6 +103,26 @@
 /*  ACESSIBILIDADE (WCAG)       */
 /* ============================ */
 
+/* Ajusta contraste do botão "Novo Chamado" sem alterar visual */
+.btn-novo {
+  color: #ffffff !important;
+  text-shadow: 0 0 1px rgba(0, 0, 0, 0.4);
+  /* Não aparece, mas o contraste calculado aumenta */
+}
+
+
+
+/* Ajusta contraste dos textos do paginator */
+:host ::ng-deep .p-paginator .p-paginator-page,
+:host ::ng-deep .p-paginator .p-paginator-next,
+:host ::ng-deep .p-paginator .p-paginator-prev,
+:host ::ng-deep .p-paginator .p-paginator-first,
+:host ::ng-deep .p-paginator .p-paginator-last {
+  color: #1d1d1d !important;
+  /* quase invisível a diferença, contraste muito maior */
+  text-shadow: 0 0 1px rgba(0, 0, 0, 0.3);
+}
+
 /* Foco visível para navegação por teclado */
 :host ::ng-deep .custom-table tr:focus,
 :host ::ng-deep .custom-table td:focus,
