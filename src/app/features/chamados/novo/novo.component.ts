@@ -9,9 +9,9 @@ import { DropdownModule } from 'primeng/dropdown';
 import { DividerModule } from 'primeng/divider';
 import { ButtonModule } from 'primeng/button';
 import { ToastModule } from 'primeng/toast';
-
 import { MessageService } from 'primeng/api';
-import { Router } from '@angular/router';
+
+import { Router, RouterModule } from '@angular/router';   // IMPORTANTE
 import { ChamadosService } from '../../../core/services/chamados.service';
 
 @Component({
@@ -20,6 +20,7 @@ import { ChamadosService } from '../../../core/services/chamados.service';
   imports: [
     CommonModule,
     FormsModule,
+    RouterModule,       // <--- ESSENCIAL PARA FUNCIONAR O routerLink
     CardModule,
     InputTextModule,
     InputTextareaModule,
@@ -28,6 +29,7 @@ import { ChamadosService } from '../../../core/services/chamados.service';
     ButtonModule,
     ToastModule
   ],
+  providers: [MessageService],
   templateUrl: './novo.component.html',
   styleUrls: ['./novo.component.css']
 })

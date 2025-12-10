@@ -1,6 +1,12 @@
 <div class="page">
+  <p-card class="form-card">
+    <div class="card-header">
+      <button pButton label="Voltar" icon="pi pi-arrow-left" class="p-button-text p-button-sm btn-voltar"
+        routerLink="/chamados">
+      </button>
 
-  <p-card class="form-card" header="Novo Chamado">
+      <h2 class="form-title">Novo Chamado</h2>
+    </div>
 
     <div class="grid-form">
 
@@ -17,8 +23,7 @@
 
       <div class="field">
         <label for="categoria">Categoria</label>
-        <p-dropdown id="categoria" [options]="categorias" [(ngModel)]="categoria" placeholder="Selecione">
-        </p-dropdown>
+        <p-dropdown id="categoria" [options]="categorias" [(ngModel)]="categoria" placeholder="Selecione"></p-dropdown>
       </div>
 
     </div>
@@ -26,11 +31,9 @@
     <p-divider></p-divider>
 
     <div class="actions">
-      <button pButton label="Salvar Chamado" icon="pi pi-check" class="p-button-success p-button-lg btn-minimal"
-        (click)="salvar()">
+      <button pButton label="Salvar Chamado" icon="pi pi-check" class="p-button-success p-button-sm" (click)="salvar()">
       </button>
     </div>
 
   </p-card>
-
 </div>

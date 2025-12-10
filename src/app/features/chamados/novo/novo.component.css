@@ -29,6 +29,23 @@
   color: #333;
 }
 
+.actions {
+  margin-top: 24px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.btn-voltar {
+  color: rgb(78, 155, 255) !important;
+  padding-left: 0 !important;
+  margin: -28px 0 0 0;
+}
+
+.btn-voltar:hover {
+  background-color: #eef2ff !important;
+}
+
 .field input,
 .field textarea,
 .field .p-dropdown {
