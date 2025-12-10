@@ -126,6 +126,6 @@ A aplicação implementa:
   - Interface adaptada para desktop e mobile.
 
 - **Mock de dados**
-  - Simulação de backend utilizando arquivo JSON ou serviço Angular.
+  - In-memory mock service.
 
 ------------------------------------------------------------------------
