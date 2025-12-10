@@ -11,7 +11,7 @@ import { ButtonModule } from 'primeng/button';
 import { ToastModule } from 'primeng/toast';
 import { MessageService } from 'primeng/api';
 
-import { Router, RouterModule } from '@angular/router';   // IMPORTANTE
+import { Router } from '@angular/router';
 import { ChamadosService } from '../../../core/services/chamados.service';
 
 @Component({
@@ -20,7 +20,6 @@ import { ChamadosService } from '../../../core/services/chamados.service';
   imports: [
     CommonModule,
     FormsModule,
-    RouterModule,       // <--- ESSENCIAL PARA FUNCIONAR O routerLink
     CardModule,
     InputTextModule,
     InputTextareaModule,
@@ -29,7 +28,7 @@ import { ChamadosService } from '../../../core/services/chamados.service';
     ButtonModule,
     ToastModule
   ],
-  providers: [MessageService],
+  // providers: [MessageService],
   templateUrl: './novo.component.html',
   styleUrls: ['./novo.component.css']
 })
@@ -57,7 +56,7 @@ export class NovoComponent {
       this.messageService.add({
         severity: 'warn',
         summary: 'Campos obrigatórios',
-        detail: 'Todos os campos devem ser preenchidos.'
+        detail: 'Preencha todos os campos antes de salvar.'
       });
       return;
     }
@@ -71,7 +70,7 @@ export class NovoComponent {
     this.messageService.add({
       severity: 'success',
       summary: 'Chamado criado!',
-      detail: 'O chamado foi registrado com sucesso.'
+      detail: 'O chamado foi salvo com sucesso.'
     });
 
     setTimeout(() => {

@@ -56,12 +56,15 @@
               "outputHashing": "all"
             },
             "development": {
-              "buildOptimizer": false,
-              "optimization": false,
-              "vendorChunk": true,
+              "buildOptimizer": true,
+              "optimization": {
+                "scripts": true,
+                "styles": true
+              },
+              "vendorChunk": false,
               "extractLicenses": false,
-              "sourceMap": true,
-              "namedChunks": true
+              "sourceMap": false,
+              "namedChunks": false
             }
           },
           "defaultConfiguration": "production"
