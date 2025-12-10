@@ -1,29 +1,40 @@
 <div class="page">
-  <p-card class="form-card">
+  <p-card class="form-card" role="form" aria-labelledby="titulo-form">
+
     <div class="card-header">
       <button pButton label="Voltar" icon="pi pi-arrow-left" class="p-button-text p-button-sm btn-voltar"
-        routerLink="/chamados">
+        routerLink="/chamados" aria-label="Voltar para a lista de chamados" type="button">
       </button>
 
-      <h2 class="form-title">Novo Chamado</h2>
+      <h2 id="titulo-form" class="form-title">Novo Chamado</h2>
     </div>
 
     <div class="grid-form">
 
       <div class="field">
         <label for="titulo">Título</label>
-        <input pInputText id="titulo" [(ngModel)]="titulo" placeholder="Digite o título">
+        <input pInputText id="titulo" [(ngModel)]="titulo" placeholder="Digite o título" aria-required="true"
+          aria-describedby="titulo-help">
+        <small id="titulo-help" class="sr-only">
+          Informe um título curto e objetivo para o chamado.
+        </small>
       </div>
 
       <div class="field">
         <label for="descricao">Descrição</label>
-        <textarea pInputTextarea id="descricao" rows="4" [(ngModel)]="descricao" placeholder="Digite a descrição">
+        <textarea pInputTextarea id="descricao" rows="4" [(ngModel)]="descricao" placeholder="Digite a descrição"
+          aria-required="true" aria-describedby="descricao-help">
         </textarea>
+        <small id="descricao-help" class="sr-only">
+          Informe detalhes do problema para que o suporte possa entender o cenário.
+        </small>
       </div>
 
       <div class="field">
         <label for="categoria">Categoria</label>
-        <p-dropdown id="categoria" [options]="categorias" [(ngModel)]="categoria" placeholder="Selecione"></p-dropdown>
+        <p-dropdown id="categoria" [options]="categorias" [(ngModel)]="categoria" placeholder="Selecione"
+          aria-required="true" aria-label="Selecionar categoria do chamado">
+        </p-dropdown>
       </div>
 
     </div>
@@ -31,7 +42,8 @@
     <p-divider></p-divider>
 
     <div class="actions">
-      <button pButton label="Salvar Chamado" icon="pi pi-check" class="p-button-success p-button-sm" (click)="salvar()">
+      <button pButton label="Salvar Chamado" icon="pi pi-check" class="p-button-success p-button-sm" (click)="salvar()"
+        aria-label="Salvar Chamado">
       </button>
     </div>
 
