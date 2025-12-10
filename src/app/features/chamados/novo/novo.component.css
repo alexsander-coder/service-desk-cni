@@ -1,18 +1,64 @@
-h2 {
-  margin-bottom: 20px;
+.page {
+  display: flex;
+  justify-content: center;
+  padding: 24px;
+}
+
+.form-card {
+  width: 100%;
+  max-width: 640px;
+  padding-bottom: 12px;
+}
+
+.form-title {
   font-size: 22px;
   font-weight: 600;
+  margin-bottom: 20px;
 }
 
-.form-container {
-  display: flex;
-  flex-direction: column;
-  gap: 15px;
-  max-width: 420px;
+.grid-form {
+  display: grid;
+  gap: 20px;
 }
 
-.feedback {
-  margin-top: 10px;
+/* Campo */
+.field label {
+  font-weight: 600;
+  display: block;
+  margin-bottom: 6px;
   font-size: 14px;
-  color: green;
+  color: #333;
+}
+
+.field input,
+.field textarea,
+.field .p-dropdown {
+  width: 100%;
+}
+
+/* Botões */
+.actions {
+  margin-top: 24px;
+  display: flex;
+  justify-content: flex-end;
+}
+
+/* -------- RESPONSIVIDADE -------- */
+
+@media (max-width: 520px) {
+  .page {
+    padding: 12px;
+  }
+
+  .form-card {
+    padding: 10px;
+  }
+
+  .form-title {
+    font-size: 19px;
+  }
+
+  .grid-form {
+    gap: 16px;
+  }
 }

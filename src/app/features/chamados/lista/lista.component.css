@@ -31,6 +31,11 @@
   background-color: #2563eb;
 }
 
+
+/* ============================ */
+/*  TABELA CUSTOMIZADA          */
+/* ============================ */
+
 :host ::ng-deep .custom-table {
   border-radius: 8px;
   overflow: hidden;
@@ -55,6 +60,38 @@
   cursor: pointer;
 }
 
+
+
+/* ============================ */
+/*  PAGINAÇÃO RESPONSIVA        */
+/* ============================ */
+
+:host ::ng-deep .p-paginator {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 6px;
+  padding: 14px !important;
+}
+
+/* Botões da paginação */
+:host ::ng-deep .p-paginator .p-paginator-pages .p-paginator-page,
+:host ::ng-deep .p-paginator-first,
+:host ::ng-deep .p-paginator-prev,
+:host ::ng-deep .p-paginator-next,
+:host ::ng-deep .p-paginator-last {
+  min-width: 36px;
+  height: 36px;
+  font-size: 14px;
+}
+
+/* Dropdown de "rows per page" */
+:host ::ng-deep .p-paginator .p-dropdown {
+  width: auto !important;
+  min-width: 80px;
+}
+
+/* ====== MOBILE ====== */
 @media (max-width: 600px) {
   .page-container {
     padding: 16px;
@@ -62,5 +99,20 @@
 
   .header h2 {
     font-size: 20px;
+  }
+
+  /* :host ::ng-deep .p-paginator {
+    flex-direction: column;
+    align-items: center;
+  } */
+
+  :host ::ng-deep .p-paginator .p-dropdown {
+    width: 100% !important;
+  }
+
+  :host ::ng-deep .custom-table td,
+  :host ::ng-deep .custom-table th {
+    padding: 8px !important;
+    font-size: 13px;
   }
 }

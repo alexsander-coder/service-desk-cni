@@ -1,10 +1,16 @@
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
+
+import { CardModule } from 'primeng/card';
 import { InputTextModule } from 'primeng/inputtext';
-import { DropdownModule } from 'primeng/dropdown';
 import { InputTextareaModule } from 'primeng/inputtextarea';
+import { DropdownModule } from 'primeng/dropdown';
+import { DividerModule } from 'primeng/divider';
 import { ButtonModule } from 'primeng/button';
+import { ToastModule } from 'primeng/toast';
+
+import { MessageService } from 'primeng/api';
 import { Router } from '@angular/router';
 import { ChamadosService } from '../../../core/services/chamados.service';
 
@@ -14,10 +20,13 @@ import { ChamadosService } from '../../../core/services/chamados.service';
   imports: [
     CommonModule,
     FormsModule,
+    CardModule,
     InputTextModule,
-    DropdownModule,
     InputTextareaModule,
-    ButtonModule
+    DropdownModule,
+    DividerModule,
+    ButtonModule,
+    ToastModule
   ],
   templateUrl: './novo.component.html',
   styleUrls: ['./novo.component.css']
@@ -35,16 +44,19 @@ export class NovoComponent {
     { label: 'Sistemas', value: 'Sistemas' }
   ];
 
-  feedback = '';
-
   constructor(
     private chamadosService: ChamadosService,
-    private router: Router
+    private router: Router,
+    private messageService: MessageService
   ) { }
 
   salvar() {
     if (!this.titulo.trim() || !this.descricao.trim() || !this.categoria) {
-      this.feedback = 'Todos os campos são obrigatórios.';
+      this.messageService.add({
+        severity: 'warn',
+        summary: 'Campos obrigatórios',
+        detail: 'Todos os campos devem ser preenchidos.'
+      });
       return;
     }
 
@@ -54,10 +66,14 @@ export class NovoComponent {
       categoria: this.categoria
     });
 
-    this.feedback = 'Chamado criado com sucesso!';
+    this.messageService.add({
+      severity: 'success',
+      summary: 'Chamado criado!',
+      detail: 'O chamado foi registrado com sucesso.'
+    });
 
     setTimeout(() => {
       this.router.navigate(['/chamados']);
-    }, 1200);
+    }, 1500);
   }
 }
