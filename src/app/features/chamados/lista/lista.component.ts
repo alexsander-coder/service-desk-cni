@@ -1,12 +1,19 @@
 import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { TableModule } from 'primeng/table';
+import { ButtonModule } from 'primeng/button';
+import { RouterModule } from '@angular/router';
 import { ChamadosService, Chamado } from '../../../core/services/chamados.service';
 
 @Component({
   selector: 'app-lista',
   standalone: true,
-  imports: [CommonModule, TableModule],
+  imports: [
+    CommonModule,
+    TableModule,
+    ButtonModule,
+    RouterModule,
+  ],
   templateUrl: './lista.component.html',
   styleUrls: ['./lista.component.css']
 })
