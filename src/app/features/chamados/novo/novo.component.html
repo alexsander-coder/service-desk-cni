@@ -1,0 +1,19 @@
+<h2>Novo Chamado</h2>
+
+<div class="form-container">
+
+  <label for="titulo">Título</label>
+  <input id="titulo" type="text" pInputText [(ngModel)]="titulo" placeholder="Digite o título" />
+
+  <label for="descricao">Descrição</label>
+  <textarea id="descricao" pTextarea rows="4" [(ngModel)]="descricao" placeholder="Descreva o problema"></textarea>
+
+  <label for="categoria">Categoria</label>
+  <p-dropdown id="categoria" [options]="categorias" [(ngModel)]="categoria"
+    placeholder="Selecione uma categoria"></p-dropdown>
+
+  <button pButton label="Salvar" class="mt-3" (click)="salvar()"></button>
+
+  <p class="feedback">{{ feedback }}</p>
+
+</div>
