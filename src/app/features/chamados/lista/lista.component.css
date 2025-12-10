@@ -98,6 +98,52 @@
   min-width: 80px;
 }
 
+
+/* ============================ */
+/*  ACESSIBILIDADE (WCAG)       */
+/* ============================ */
+
+/* Foco visível para navegação por teclado */
+:host ::ng-deep .custom-table tr:focus,
+:host ::ng-deep .custom-table td:focus,
+:host ::ng-deep .custom-table th:focus,
+.btn-novo:focus,
+:host ::ng-deep .p-paginator button:focus,
+:host ::ng-deep .p-paginator .p-dropdown:focus {
+  outline: 3px solid #3b82f6;
+  /* Azul compatível com WCAG */
+  outline-offset: 2px;
+}
+
+/* Torna linhas navegáveis por teclado (sem afetar design) */
+:host ::ng-deep .custom-table tr {
+  outline: none;
+}
+
+/* Melhora contraste do hover para usuários com dificuldade de visão */
+:host ::ng-deep .custom-table .p-datatable-tbody>tr:hover {
+  background-color: #eef2ff;
+  /* leve lilás visível + acessível */
+}
+
+/* Aumenta área de clique dos botões da paginação */
+:host ::ng-deep .p-paginator button {
+  padding: 6px 10px;
+}
+
+/* Texto da tabela mais legível (acessível no mobile) */
+:host ::ng-deep .custom-table td,
+:host ::ng-deep .custom-table th {
+  line-height: 1.4;
+}
+
+/* Acessibilidade do título principal */
+.header h2,
+.form-title {
+  letter-spacing: 0.3px;
+  text-rendering: optimizeLegibility;
+}
+
 /* ====== MOBILE ====== */
 @media (max-width: 600px) {
   .page-container {

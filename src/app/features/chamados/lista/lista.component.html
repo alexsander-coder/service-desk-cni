@@ -1,25 +1,28 @@
-<div class="page-container">
+<div class="page-container" role="main">
 
-  <div class="header">
-    <h2 class="form-title">Lista de Chamados</h2>
-    <button pButton label="Novo Chamado" icon="pi pi-plus" class="btn-novo" routerLink="/chamados/novo">
+  <div class="header" role="banner">
+    <h2 class="form-title" id="lista-title">Lista de Chamados</h2>
+
+    <button pButton label="Novo Chamado" icon="pi pi-plus" class="btn-novo" routerLink="/chamados/novo"
+      aria-label="Criar novo chamado">
     </button>
   </div>
 
   <p-table [value]="chamados" [paginator]="true" [rows]="10" [rowsPerPageOptions]="[5, 10, 20, 50]"
-    responsiveLayout="scroll" styleClass="p-datatable-sm custom-table" [tableStyle]="{ 'min-width': '600px' }">
+    responsiveLayout="scroll" styleClass="p-datatable-sm custom-table" [tableStyle]="{ 'min-width': '600px' }"
+    aria-label="Tabela de lista de chamados" [scrollable]="true">
 
     <ng-template pTemplate="header">
       <tr>
-        <th>ID</th>
-        <th>Título</th>
-        <th>Descrição</th>
-        <th>Categoria</th>
+        <th scope="col">ID</th>
+        <th scope="col">Título</th>
+        <th scope="col">Descrição</th>
+        <th scope="col">Categoria</th>
       </tr>
     </ng-template>
 
     <ng-template pTemplate="body" let-item>
-      <tr>
+      <tr tabindex="0" aria-label="Linha da tabela contendo informações do chamado">
         <td>{{ item.id }}</td>
         <td>{{ item.titulo }}</td>
         <td>{{ item.descricao }}</td>
