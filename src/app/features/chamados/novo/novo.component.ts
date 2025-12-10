@@ -10,6 +10,8 @@ import { DividerModule } from 'primeng/divider';
 import { ButtonModule } from 'primeng/button';
 import { ToastModule } from 'primeng/toast';
 import { MessageService } from 'primeng/api';
+import { RouterModule } from '@angular/router';
+
 
 import { Router } from '@angular/router';
 import { ChamadosService } from '../../../core/services/chamados.service';
@@ -26,7 +28,8 @@ import { ChamadosService } from '../../../core/services/chamados.service';
     DropdownModule,
     DividerModule,
     ButtonModule,
-    ToastModule
+    ToastModule,
+    RouterModule
   ],
   // providers: [MessageService],
   templateUrl: './novo.component.html',
