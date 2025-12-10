@@ -93,6 +93,23 @@ Utilizados para versionamento, rastreabilidade e organização das entregas, al�
 
 ------------------------------------------------------------------------
 
+### Percentual estimado de código gerado por IA e pelo desenvolvedor
+
+- **ChatGPT (OpenAI)** 
+  - 8%
+- **Desenvolvedor**
+  - 92%
+------------------------------------------------------------------------
+
+### Observações sobre o uso de ferramentas de apoio 
+
+- **ChatGPT (OpenAI)** 
+  - utilizado exclusivamente para recomendações de accessibility enhancement, incluindo: ajustes de aria-label, aria-describedby role, boas práticas de semântica HTML.
+  - identificação de oportunidades de contraste e navegação por teclado.
+  - definição de porcentagem do código, para saber qual a porcentagem do desenvolvedor e da IA
+
+------------------------------------------------------------------------
+
 ## Sobre o Projeto
 
 A aplicação implementa:
